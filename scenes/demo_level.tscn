@@ -140,7 +140,7 @@ tile_map_data = PackedByteArray("AAABAP//AgABAAAAAAACAP//AgABAAAAAAADAP//AgABAAA
 tile_set = SubResource("TileSet_3vwp3")
 
 [node name="DemoPlayer" parent="." instance=ExtResource("2_gnkf1")]
-position = Vector2(73, -96)
+position = Vector2(24, -65)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1858.0
