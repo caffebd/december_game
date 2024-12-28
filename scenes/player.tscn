@@ -54,3 +54,9 @@ offset_left = -538.0
 offset_top = -287.0
 offset_right = -538.0
 offset_bottom = -287.0
+
+[node name="SpeedPowerUp" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="SpeedPowerUp" to="." method="_on_speed_power_up_timeout"]
