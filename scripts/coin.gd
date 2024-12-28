@@ -1,5 +1,6 @@
 extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
-	queue_free()
-	GlobalSignals.update_score.emit()
+	if body.is_in_group("player"):
+		queue_free()
+		GlobalSignals.update_score.emit()

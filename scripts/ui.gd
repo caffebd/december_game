@@ -1,11 +1,15 @@
 extends Control
 
-var coin_count = 6
+var coin_count = 5
+var my_life = 3
 
 func _ready() -> void:
 	$item_count.text = "Left : "+str(coin_count)
 	$timer_label.text = "Time : "+str(time)
+	$life_count.text = "Life : "+str(my_life)
+	GlobalSignals.update_life.connect(_update_life)
 	GlobalSignals.update_score.connect(_update_score)
+	GlobalSignals.life_lost.connect(_life_lost)
 
 var time = 20
 
@@ -18,3 +22,13 @@ func _on_time_timeout() -> void:
 func _update_score():
 	coin_count -= 1
 	$item_count.text = "Left : "+str(coin_count)
+
+func _update_life():
+	my_life += 1
+	$life_count.text = "Life : "+str(my_life)
+
+func _life_lost():
+	my_life -= 1
+	$life_count.text = "Life : "+str(my_life)
+	if my_life == 0:
+		get_tree().reload_current_scene()

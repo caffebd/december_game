@@ -22,6 +22,9 @@ GlobalSignals="*res://auto_load/global_signals.gd"
 [global_group]
 
 power_up=""
+player=""
+enemy=""
+others=""
 
 [rendering]
 

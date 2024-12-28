@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtftjxsp2xi84"]
+
+[ext_resource type="Script" path="res://scripts/ghost.gd" id="1_bplkt"]
+[ext_resource type="Texture2D" uid="uid://ufpl37ksfh0x" path="res://assets/enemy/ghost.png" id="1_fl67i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ot3ne"]
+size = Vector2(46, 46)
+
+[node name="ghost" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_bplkt")
+
+[node name="ghost" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_fl67i")
+
+[node name="ghost_Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ot3ne")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
