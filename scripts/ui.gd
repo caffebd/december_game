@@ -1,6 +1,6 @@
 extends Control
 
-var coin_count = 5
+var coin_count = 6
 var my_life = 3
 
 func _ready() -> void:
@@ -25,10 +25,15 @@ func _update_score():
 
 func _update_life():
 	my_life += 1
+	print(my_life)
 	$life_count.text = "Life : "+str(my_life)
 
 func _life_lost():
 	my_life -= 1
 	$life_count.text = "Life : "+str(my_life)
+	print(my_life)
 	if my_life == 0:
-		get_tree().reload_current_scene()
+		call_deferred("reload_scene")
+
+func reload_scene():
+	get_tree().reload_current_scene()
