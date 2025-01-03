@@ -1,7 +1,7 @@
 extends Area2D
 
-var move_to = Vector2(100,0)
-var move_time = 1.0
+@export var move_to = Vector2(100,0)
+@export var move_time = 1.0
 
 var start_pos = Vector2(200,0)
 var target_pos = Vector2.ZERO
