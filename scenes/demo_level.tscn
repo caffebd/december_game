@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cco15k3vdj4at"]
+[gd_scene load_steps=12 format=4 uid="uid://cco15k3vdj4at"]
 
 [ext_resource type="Texture2D" uid="uid://c86d2n6rxf32h" path="res://assets/demo_tiles/platformPack_tilesheet.png" id="1_tkgyp"]
 [ext_resource type="PackedScene" uid="uid://bu1km42riw2u7" path="res://scenes/player.tscn" id="2_gnkf1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bjwbhyno6kgan" path="res://scenes/life.tscn" id="5_cllp7"]
 [ext_resource type="PackedScene" uid="uid://dtftjxsp2xi84" path="res://scenes/ghost.tscn" id="6_n6pjw"]
 [ext_resource type="PackedScene" uid="uid://d388yepn573ju" path="res://scenes/starting_point.tscn" id="7_vl8ow"]
+[ext_resource type="PackedScene" uid="uid://c6rfmmdcg74pm" path="res://scenes/speed_power_up.tscn" id="8_l52vw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqr3h"]
 texture = ExtResource("1_tkgyp")
@@ -182,3 +183,6 @@ move_time = 3.0
 
 [node name="starting_point" parent="." instance=ExtResource("7_vl8ow")]
 position = Vector2(39, -48)
+
+[node name="SpeedPowerUp" parent="." instance=ExtResource("8_l52vw")]
+position = Vector2(200, -53)
