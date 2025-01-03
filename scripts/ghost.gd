@@ -1,10 +1,7 @@
 extends Area2D
 
 @export var move_to = Vector2(100,0)
-<<<<<<< HEAD
-=======
 
->>>>>>> 0dc7369019f63c449749f67498b5e867b755fad2
 @export var move_time = 1.0
 
 var start_pos = Vector2(200,0)

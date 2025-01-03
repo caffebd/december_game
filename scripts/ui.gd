@@ -10,6 +10,7 @@ func _ready() -> void:
 	GlobalSignals.update_life.connect(_update_life)
 	GlobalSignals.update_score.connect(_update_score)
 	GlobalSignals.life_lost.connect(_life_lost)
+	GlobalSignals.sign_text.connect(_sign_text)
 
 var time = 20
 
@@ -22,6 +23,10 @@ func _on_time_timeout() -> void:
 func _update_score():
 	coin_count -= 1
 	$item_count.text = "Left : "+str(coin_count)
+
+func _sign_text(text):
+	$sign_text.text = ""+str(text)
+	$sign_text.visible = true
 
 func _update_life():
 	my_life += 1

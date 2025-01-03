@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu1km42riw2u7"]
+[gd_scene load_steps=7 format=3 uid="uid://bu1km42riw2u7"]
 
 [ext_resource type="Script" path="res://scripts/demo_player.gd" id="1_b5ktt"]
 [ext_resource type="Texture2D" uid="uid://bone6fy30sgv0" path="res://assets/demo_player/platformChar_idle.png" id="2_txyn5"]
-[ext_resource type="Texture2D" uid="uid://d0ppxu1pdtjdc" path="res://assets/demo_player/platformChar_walk1.png" id="3_usoq4"]
-[ext_resource type="Texture2D" uid="uid://b8alhywbhu5ce" path="res://assets/demo_player/platformChar_walk2.png" id="4_3kdrd"]
+[ext_resource type="Texture2D" uid="uid://cyaqt674f4bje" path="res://assets/demo_player/charecter.png" id="3_3ohi6"]
 [ext_resource type="PackedScene" uid="uid://bi603frbfcrcf" path="res://scenes/ui.tscn" id="5_8pbfp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3u1r6"]
@@ -18,34 +17,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_usoq4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_3kdrd")
+"texture": ExtResource("3_3ohi6")
 }],
 "loop": true,
 "name": &"walk",
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qdsnq"]
-radius = 21.0
-height = 44.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqfia"]
+size = Vector2(41, 64)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_b5ktt")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-scale = Vector2(0.625, 0.625)
+scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_3u1r6")
 animation = &"walk"
-frame = 1
 frame_progress = 0.416664
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 9)
-shape = SubResource("CapsuleShape2D_qdsnq")
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_hqfia")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://btfayfwntar51"]
+
+[ext_resource type="Texture2D" uid="uid://cgli2b0c1lted" path="res://assets/power_up/key.png" id="1_5kiju"]
+[ext_resource type="Script" path="res://scripts/key.gd" id="1_mkit4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pyyo"]
+size = Vector2(32, 11)
+
+[node name="key" type="Area2D" groups=["power_up"]]
+script = ExtResource("1_mkit4")
+
+[node name="key_Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_1pyyo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5kiju")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
