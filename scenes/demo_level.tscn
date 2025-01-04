@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cco15k3vdj4at"]
+[gd_scene load_steps=20 format=4 uid="uid://cco15k3vdj4at"]
 
 [ext_resource type="Texture2D" uid="uid://cpp01rdr0uwww" path="res://assets/demo_tiles/tilemap2.png" id="1_4fsmo"]
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_w5fq1"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://cwcaplp4jc5ep" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="3_tkgwb"]
 [ext_resource type="PackedScene" uid="uid://dco1mfqk434r8" path="res://scenes/coin.tscn" id="4_e5ynb"]
 [ext_resource type="PackedScene" uid="uid://bjwbhyno6kgan" path="res://scenes/life.tscn" id="5_cllp7"]
+[ext_resource type="Texture2D" uid="uid://c86d2n6rxf32h" path="res://assets/demo_tiles/platformPack_tilesheet.png" id="5_sh1yh"]
 [ext_resource type="PackedScene" uid="uid://dtftjxsp2xi84" path="res://scenes/ghost.tscn" id="6_n6pjw"]
 [ext_resource type="PackedScene" uid="uid://d388yepn573ju" path="res://scenes/starting_point.tscn" id="7_vl8ow"]
 [ext_resource type="PackedScene" uid="uid://jqfcfr3d7l1m" path="res://scenes/speed_power_up.tscn" id="8_l52vw"]
@@ -28,13 +29,6 @@ texture_region_size = Vector2i(32, 32)
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:0/0 = 0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:1/0 = 0
@@ -45,13 +39,6 @@ texture_region_size = Vector2i(32, 32)
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -0.282238, 16, 16, -16, 16)
 4:1/0 = 0
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:2/0 = 0
@@ -64,6 +51,40 @@ texture_region_size = Vector2i(32, 32)
 4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -0.282238, 16, 16, -16, 16)
 5:2/0 = 0
 5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -0.282238, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13b1"]
+texture = ExtResource("5_sh1yh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
 6:2/0 = 0
 7:2/0 = 0
 8:2/0 = 0
@@ -71,15 +92,10 @@ texture_region_size = Vector2i(32, 32)
 10:2/0 = 0
 11:2/0 = 0
 0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:3/0 = 0
-4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:3/0 = 0
 6:3/0 = 0
 7:3/0 = 0
@@ -104,7 +120,6 @@ texture_region_size = Vector2i(32, 32)
 2:5/0 = 0
 3:5/0 = 0
 4:5/0 = 0
-4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:5/0 = 0
 6:5/0 = 0
 7:5/0 = 0
@@ -165,6 +180,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_syu5f")
 sources/2 = SubResource("TileSetAtlasSource_30xl5")
+sources/1 = SubResource("TileSetAtlasSource_c13b1")
 
 [node name="DemoLevel" type="Node2D"]
 script = ExtResource("1_w5fq1")
