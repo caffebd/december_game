@@ -7,3 +7,4 @@ func _ready() -> void:
 
 func _on_walk_timer_timeout() -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
+	direction * speed
