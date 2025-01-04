@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://egfccgm8vvvo"]
+[gd_scene load_steps=5 format=3 uid="uid://egfccgm8vvvo"]
 
 [ext_resource type="Texture2D" uid="uid://cb2o43wpaojvg" path="res://assets/other_sprite/elephant.png" id="1_ajprq"]
 [ext_resource type="Script" path="res://scripts/elephant.gd" id="1_rj74h"]
+[ext_resource type="FontFile" uid="uid://cwcaplp4jc5ep" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="3_n4nc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pv8aj"]
 size = Vector2(88, 93)
@@ -18,5 +19,16 @@ position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_pv8aj")
 
 [node name="walk_timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -65.0
+offset_right = 49.0
+offset_bottom = -47.0
+theme_override_fonts/font = ExtResource("3_n4nc1")
+theme_override_font_sizes/font_size = 15
+text = "Help Me !!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="walk_timer" to="." method="_on_walk_timer_timeout"]

@@ -4,16 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://c74klmdur60xw" path="res://assets/sprites/power up.png" id="2_b7isr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guo71"]
-size = Vector2(30, 29)
+size = Vector2(32, 32)
 
-[node name="SpeedPowerUp" type="Area2D"]
+[node name="SpeedPowerUp" type="Area2D" groups=["power_up"]]
 script = ExtResource("1_sbhyx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_b7isr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_guo71")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,16 +4,16 @@
 [ext_resource type="Script" path="res://scripts/key.gd" id="1_mkit4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1pyyo"]
-size = Vector2(32, 11)
+size = Vector2(32, 21)
 
 [node name="key" type="Area2D" groups=["power_up"]]
 script = ExtResource("1_mkit4")
 
-[node name="key_Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_1pyyo")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5kiju")
+
+[node name="key_Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1pyyo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1jud8rrpbart"]
+
+[ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_bqwa6"]
+[ext_resource type="Texture2D" uid="uid://dbfnh8o50rnar" path="res://assets/background/background_art.png" id="1_w1etf"]
+[ext_resource type="FontFile" uid="uid://cwcaplp4jc5ep" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="2_17ekh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80eg8"]
+bg_color = Color(0, 0.4224, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esskm"]
+bg_color = Color(5.47487e-07, 0.279004, 0.0985398, 1)
+
+[node name="main_scene" type="Node2D"]
+script = ExtResource("1_bqwa6")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(576.468, 324)
+scale = Vector2(4.20779, 4.20779)
+texture = ExtResource("1_w1etf")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 496.0
+offset_top = 408.0
+offset_right = 680.0
+offset_bottom = 495.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.638084, 0.259141, 0.154191, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_17ekh")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_80eg8")
+text = "Play"
+
+[node name="name" type="Label" parent="."]
+offset_left = 104.0
+offset_top = 103.0
+offset_right = 1048.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_17ekh")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_esskm")
+text = "Student Platform"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
