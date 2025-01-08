@@ -3,6 +3,7 @@ extends RigidBody2D
 func _ready() -> void:
 	GlobalSignals.key_collected.connect(_stone_show)
 	$CollisionShape2D.set_deferred("disabled", true)
+	$special_stone_area/CollisionShape2D.set_deferred("disabled", true)
 
 func pit_drop():
 	gravity_scale = 0.0
@@ -15,5 +16,6 @@ func _on_special_stone_area_body_entered(body: Node2D) -> void:
 		queue_free()
 
 func _stone_show():
-	$CollisionShape2D.set_deferred("disabled", false)
 	visible = true
+	$CollisionShape2D.set_deferred("disabled", false)
+	$special_stone_area/CollisionShape2D.set_deferred("disabled", false)

@@ -6,7 +6,8 @@
 script/source = "extends RigidBody2D
 
 func _ready() -> void:
-	GlobalSignals.key_collected.connect(_stone_show)
+	pass
+	#GlobalSignals.key_collected.connect(_stone_show)
 	#$CollisionShape2D.set_deferred(\"disabled\", true)
 
 func pit_drop():
@@ -31,6 +32,7 @@ size = Vector2(18, 32)
 size = Vector2(32, 10)
 
 [node name="special_stone" type="RigidBody2D"]
+gravity_scale = 0.0
 script = SubResource("GDScript_4ck3n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
