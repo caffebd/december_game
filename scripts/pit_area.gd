@@ -2,8 +2,6 @@ extends Area2D
 
 var current_marker = 0
 
-var stones_placed = 0
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("stone"):
 		body.pit_drop()
@@ -13,7 +11,6 @@ func _on_body_entered(body: Node2D) -> void:
 		var stone_tween = create_tween()
 		stone_tween.tween_property(body, "global_position", to_marker.global_position, 0.5)
 		
-		stones_placed += 1
-		if stones_placed == 6:
+		if current_marker == 6:
 			GlobalSignals.elephant_climb.emit()
 		

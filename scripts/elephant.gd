@@ -1,10 +1,14 @@
 extends RigidBody2D
 
-var speed = 150.0
+@export var climb_markers : Node2D
 
 func _ready() -> void:
-	$walk_timer.start()
+	GlobalSignals.elephant_climb.connect(_elephant_climb)
 
-func _on_walk_timer_timeout() -> void:
-	var direction := Input.get_axis("ui_left", "ui_right")
-	direction * speed
+func _elephant_climb():
+	gravity_scale = 0.0
+	var markers = climb_markers.get_children()
+	for marker in markers:
+		var climb_tween = create_tween()
+		climb_tween.tween_property(self, "global_position", marker.global_position, 0.5)
+		await climb_tween.finished

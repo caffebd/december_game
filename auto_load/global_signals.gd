@@ -12,3 +12,5 @@ signal sign_text(text)
 signal flower_jump()
 
 signal stone_collected()
+
+signal elephant_climb()

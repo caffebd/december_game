@@ -8,6 +8,8 @@
 size = Vector2(88, 93)
 
 [node name="elephant" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_rj74h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,9 +19,6 @@ texture = ExtResource("1_ajprq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_pv8aj")
-
-[node name="walk_timer" type="Timer" parent="."]
-wait_time = 0.01
 
 [node name="Label" type="Label" parent="."]
 offset_left = -48.0
@@ -31,5 +30,3 @@ theme_override_font_sizes/font_size = 15
 text = "Help Me !!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="timeout" from="walk_timer" to="." method="_on_walk_timer_timeout"]
