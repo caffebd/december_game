@@ -12,3 +12,4 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		if current_marker == 6:
 			GlobalSignals.elephant_climb.emit()
+			

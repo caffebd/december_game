@@ -13,3 +13,4 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _key_collected():
 	$lock_label.text = "Door Unlocked"
+	

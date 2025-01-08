@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvor5tpqyel03"]
+[gd_scene load_steps=6 format=3 uid="uid://bvor5tpqyel03"]
 
 [ext_resource type="Texture2D" uid="uid://tebqlhe1wktx" path="res://assets/other_sprite/home.png" id="1_la6en"]
 [ext_resource type="Script" path="res://scripts/house.gd" id="1_ux4y7"]
 [ext_resource type="FontFile" uid="uid://cwcaplp4jc5ep" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="3_r8e4a"]
+[ext_resource type="PackedScene" uid="uid://bsok6oiuh1r5w" path="res://scenes/special_stone.tscn" id="4_2oqpd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekvm6"]
 size = Vector2(52, 70)
@@ -29,6 +30,9 @@ theme_override_font_sizes/font_size = 13
 text = "Door Locked"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="special_stone" parent="." instance=ExtResource("4_2oqpd")]
+position = Vector2(57, 19)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

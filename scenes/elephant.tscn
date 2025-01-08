@@ -1,24 +1,54 @@
-[gd_scene load_steps=5 format=3 uid="uid://egfccgm8vvvo"]
+[gd_scene load_steps=9 format=3 uid="uid://egfccgm8vvvo"]
 
 [ext_resource type="Texture2D" uid="uid://cb2o43wpaojvg" path="res://assets/other_sprite/elephant.png" id="1_ajprq"]
 [ext_resource type="Script" path="res://scripts/elephant.gd" id="1_rj74h"]
+[ext_resource type="Texture2D" uid="uid://c2xht003nq5d8" path="res://assets/other_sprite/elephant_animation/elephant_running1.png" id="3_2insc"]
 [ext_resource type="FontFile" uid="uid://cwcaplp4jc5ep" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="3_n4nc1"]
+[ext_resource type="Texture2D" uid="uid://bmgtj7lcbu8r1" path="res://assets/other_sprite/elephant_animation/elephant_running2.png" id="4_c1ixt"]
+[ext_resource type="Texture2D" uid="uid://drdxf4xmtpskw" path="res://assets/other_sprite/elephant_animation/elephant_running3.png" id="5_tgdwl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pv8aj"]
-size = Vector2(88, 93)
+[sub_resource type="SpriteFrames" id="SpriteFrames_648kx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ajprq")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2insc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c1ixt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tgdwl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h082b"]
+radius = 48.1274
 
 [node name="elephant" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_rj74h")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="elephant_anim" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.46875, 1.46875)
-texture = ExtResource("1_ajprq")
+sprite_frames = SubResource("SpriteFrames_648kx")
+animation = &"walk"
+frame_progress = 0.84007
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_pv8aj")
+shape = SubResource("CircleShape2D_h082b")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -48.0
