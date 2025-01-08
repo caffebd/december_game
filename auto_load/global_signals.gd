@@ -8,3 +8,7 @@ signal player_speed(speed)
 signal key_collected()
 
 signal sign_text(text)
+
+signal flower_jump()
+
+signal stone_collected()

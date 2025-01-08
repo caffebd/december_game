@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://b00miq281otkx"]
+
+[ext_resource type="Script" path="res://scripts/flower_jump.gd" id="1_8jbmu"]
+[ext_resource type="Texture2D" uid="uid://b0oegcou6kd0v" path="res://assets/power_up/flower_jump/flower_jump/flower_jump1.png" id="1_aghh4"]
+[ext_resource type="Texture2D" uid="uid://1283q5dmo34k" path="res://assets/power_up/flower_jump/flower_jump/flower_jump2.png" id="2_fcybw"]
+[ext_resource type="Texture2D" uid="uid://d32gn2v4hkjiv" path="res://assets/power_up/flower_jump/flower_jump/flower_jump3.png" id="3_6cfqx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3s1km"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aghh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fcybw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6cfqx")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aghh4")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_polxu"]
+size = Vector2(15.5, 7.5)
+
+[node name="flower_jump" type="Area2D" groups=["power_up"]]
+script = ExtResource("1_8jbmu")
+
+[node name="flower_jump_anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.12, 1.12)
+sprite_frames = SubResource("SpriteFrames_3s1km")
+animation = &"jump"
+frame = 2
+frame_progress = 1.0
+speed_scale = 0.6
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_polxu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

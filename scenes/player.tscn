@@ -1,15 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu1km42riw2u7"]
+[gd_scene load_steps=11 format=3 uid="uid://bu1km42riw2u7"]
 
 [ext_resource type="Script" path="res://scripts/demo_player.gd" id="1_b5ktt"]
-[ext_resource type="Texture2D" uid="uid://bone6fy30sgv0" path="res://assets/demo_player/platformChar_idle.png" id="2_txyn5"]
-[ext_resource type="Texture2D" uid="uid://cyaqt674f4bje" path="res://assets/demo_player/charecter.png" id="3_3ohi6"]
+[ext_resource type="Texture2D" uid="uid://chrqgk08vixu0" path="res://assets/demo_player/player_animation/player_animation/player_animation2.png" id="3_ap7o6"]
+[ext_resource type="Texture2D" uid="uid://ddoob1ljif6h6" path="res://assets/demo_player/player_animation/player_animation/player_animation1.png" id="3_mk05t"]
+[ext_resource type="Texture2D" uid="uid://bl153qn2rffjx" path="res://assets/demo_player/player_animation/player_animation/player_animation3.png" id="4_j5e87"]
 [ext_resource type="PackedScene" uid="uid://bi603frbfcrcf" path="res://scenes/ui.tscn" id="5_8pbfp"]
+[ext_resource type="Texture2D" uid="uid://c73x3yxh4sy5s" path="res://assets/demo_player/player_animation/player_animation/player_animation4.png" id="5_vo2c4"]
+[ext_resource type="Texture2D" uid="uid://bauq0tgp4spuj" path="res://assets/demo_player/player_animation/player_animation/player_animation5.png" id="6_r2mk7"]
+[ext_resource type="Texture2D" uid="uid://dne1cvkp332d2" path="res://assets/demo_player/player_animation/player_animation/player_animation6.png" id="7_idjlu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3u1r6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_txyn5")
+"texture": ExtResource("3_ap7o6")
 }],
 "loop": true,
 "name": &"idle",
@@ -17,7 +21,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_3ohi6")
+"texture": ExtResource("3_mk05t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ap7o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j5e87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vo2c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r2mk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_idjlu")
 }],
 "loop": true,
 "name": &"walk",
@@ -34,10 +53,13 @@ script = ExtResource("1_b5ktt")
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_3u1r6")
 animation = &"walk"
-frame_progress = 0.416664
+speed_scale = 1.5
+
+[node name="stones_start" type="Marker2D" parent="PlayerAnim"]
+unique_name_in_owner = true
+position = Vector2(49, -28)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_hqfia")
 
 [node name="Camera2D" type="Camera2D" parent="."]

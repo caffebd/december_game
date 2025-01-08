@@ -1,16 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://cop34yh5bfb81"]
+[gd_scene load_steps=5 format=3 uid="uid://cop34yh5bfb81"]
 
-[ext_resource type="Script" path="res://scripts/stone.gd" id="1_hums0"]
+[ext_resource type="Script" path="res://scripts/stone.gd" id="1_vuwv1"]
 [ext_resource type="Texture2D" uid="uid://d21km2pjgcucl" path="res://assets/demo_tiles/stone.png" id="1_vxyck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6m5v"]
-size = Vector2(32, 32)
+size = Vector2(18, 32)
 
-[node name="stone" type="Area2D"]
-script = ExtResource("1_hums0")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmsg8"]
+size = Vector2(32, 10)
+
+[node name="stone" type="RigidBody2D" groups=["stone"]]
+script = ExtResource("1_vuwv1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vxyck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_h6m5v")
+
+[node name="stone_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stone_area"]
+shape = SubResource("RectangleShape2D_cmsg8")
+
+[connection signal="body_entered" from="stone_area" to="." method="_on_stone_area_body_entered"]
