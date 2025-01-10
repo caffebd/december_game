@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("throw") and stones > 0:
 		stones -= 1
 		var stone_load = stone.instantiate()
+		stone_load.player = self
 		stone_load.global_position = %stones_start.global_position
 		get_parent().add_child(stone_load)
 	

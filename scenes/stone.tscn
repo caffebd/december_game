@@ -9,7 +9,7 @@ size = Vector2(18, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmsg8"]
 size = Vector2(32, 10)
 
-[node name="stone" type="RigidBody2D" groups=["stone"]]
+[node name="stone" type="CharacterBody2D" groups=["stone"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_vuwv1")
