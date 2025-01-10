@@ -1,29 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsok6oiuh1r5w"]
 
 [ext_resource type="Texture2D" uid="uid://d21km2pjgcucl" path="res://assets/demo_tiles/stone.png" id="1_62bta"]
-
-[sub_resource type="GDScript" id="GDScript_4ck3n"]
-script/source = "extends RigidBody2D
-
-func _ready() -> void:
-	pass
-	#GlobalSignals.key_collected.connect(_stone_show)
-	#$CollisionShape2D.set_deferred(\"disabled\", true)
-
-func pit_drop():
-	gravity_scale = 0.0
-	linear_velocity = Vector2.ZERO
-	$stone_area/CollisionShape2D.set_deferred(\"disabled\", true)
-
-func _on_special_stone_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group(\"player\"):
-		GlobalSignals.stone_collected.emit()
-		queue_free()
-
-func _stone_show():
-	$CollisionShape2D.set_deferred(\"disabled\", false)
-	print(\"stone_showed\")
-"
+[ext_resource type="Script" path="res://scripts/special_stone.gd" id="1_87oqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xciv6"]
 size = Vector2(18, 32)
@@ -33,7 +11,7 @@ size = Vector2(32, 10)
 
 [node name="special_stone" type="RigidBody2D"]
 gravity_scale = 0.0
-script = SubResource("GDScript_4ck3n")
+script = ExtResource("1_87oqn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_62bta")

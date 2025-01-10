@@ -15,7 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		$lock_label.visible = false
-		$special_stone._stone_show()
+		
 
 func _key_collected():
 	$lock_label.text = "Door Unlocked"
