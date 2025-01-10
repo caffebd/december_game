@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cco15k3vdj4at"]
+[gd_scene load_steps=25 format=4 uid="uid://cco15k3vdj4at"]
 
 [ext_resource type="Texture2D" uid="uid://cpp01rdr0uwww" path="res://assets/demo_tiles/tilemap2.png" id="1_4fsmo"]
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_w5fq1"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b00miq281otkx" path="res://scenes/flower_jump.tscn" id="16_fkaov"]
 [ext_resource type="PackedScene" uid="uid://cop34yh5bfb81" path="res://scenes/stone.tscn" id="17_2v7e3"]
 [ext_resource type="Script" path="res://scripts/marker_area.gd" id="18_cc0j2"]
+[ext_resource type="PackedScene" uid="uid://fj81i4m63al4" path="res://scenes/spike.tscn" id="19_txfwr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syu5f"]
 texture = ExtResource("1_4fsmo")
@@ -358,5 +359,8 @@ position = Vector2(976, 176)
 
 [node name="stone4" parent="." instance=ExtResource("17_2v7e3")]
 position = Vector2(1727, -144)
+
+[node name="spike" parent="." instance=ExtResource("19_txfwr")]
+position = Vector2(319, -176)
 
 [connection signal="body_entered" from="stone_markers/marker_area" to="stone_markers/marker_area" method="_on_body_entered"]

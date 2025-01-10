@@ -1,22 +1,24 @@
 [gd_scene load_steps=6 format=3 uid="uid://bvor5tpqyel03"]
 
 [ext_resource type="Script" path="res://scripts/house.gd" id="1_ux4y7"]
-[ext_resource type="Texture2D" uid="uid://b5w51aw7o2yyk" path="res://assets/other_sprite/my_home.png" id="2_rne1x"]
+[ext_resource type="Texture2D" uid="uid://tebqlhe1wktx" path="res://assets/other_sprite/home.png" id="2_33xdb"]
 [ext_resource type="FontFile" uid="uid://cwcaplp4jc5ep" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="3_r8e4a"]
 [ext_resource type="PackedScene" uid="uid://bsok6oiuh1r5w" path="res://scenes/special_stone.tscn" id="4_2oqpd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekvm6"]
-size = Vector2(52, 37)
+size = Vector2(75, 37)
 
 [node name="house" type="Area2D"]
 script = ExtResource("1_ux4y7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13.5)
+position = Vector2(-11.5, 13.5)
 shape = SubResource("RectangleShape2D_ekvm6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_rne1x")
+position = Vector2(-11.5, -5.5)
+scale = Vector2(2.34375, 2.34375)
+texture = ExtResource("2_33xdb")
 
 [node name="lock_label" type="Label" parent="."]
 visible = false

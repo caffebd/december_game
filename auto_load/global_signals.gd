@@ -14,3 +14,5 @@ signal flower_jump()
 signal stone_collected()
 
 signal elephant_climb()
+
+signal stone_follow(object)

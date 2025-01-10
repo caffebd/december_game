@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://fj81i4m63al4"]
+
+[ext_resource type="Script" path="res://scripts/spike.gd" id="1_e85ko"]
+[ext_resource type="Texture2D" uid="uid://c83raejeqjon6" path="res://assets/enemy/spike/spike1.png" id="1_fsaom"]
+[ext_resource type="Texture2D" uid="uid://f20pmtq752t6" path="res://assets/enemy/spike/spike2.png" id="2_cn7jr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jh425"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fsaom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cn7jr")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vmltj"]
+radius = 17.0294
+
+[node name="spike" type="Area2D"]
+script = ExtResource("1_e85ko")
+
+[node name="spike_anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.27125, 1.27125)
+sprite_frames = SubResource("SpriteFrames_jh425")
+animation = &"attack"
+frame = 1
+frame_progress = 0.049997
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vmltj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
