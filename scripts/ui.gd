@@ -38,10 +38,10 @@ func _life_lost():
 	$life_count.text = "Life : "+str(my_life)
 	print(my_life)
 	if my_life == 0:
-		call_deferred("reload_scene")
+		call_deferred("change_scene")
 
-func reload_scene():
-	get_tree().reload_current_scene()
+func change_scene():
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")

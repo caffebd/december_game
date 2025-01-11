@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm50qd8l8ttg5"]
+
+[ext_resource type="Script" path="res://scripts/lava_rock.gd" id="1_2npf7"]
+[ext_resource type="Texture2D" uid="uid://busfmkdpjixfo" path="res://assets/enemy/lava_rock.png" id="1_x3222"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2wg8"]
+size = Vector2(26, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_heq06"]
+size = Vector2(26, 22)
+
+[node name="lava_rock" type="RigidBody2D"]
+collision_layer = 16
+gravity_scale = 0.3
+script = ExtResource("1_2npf7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x3222")
+
+[node name="lava_rock_coll" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_a2wg8")
+
+[node name="lava_rock" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lava_rock"]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_heq06")
+
+[connection signal="body_entered" from="lava_rock" to="." method="_on_lava_rock_body_entered"]

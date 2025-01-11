@@ -39,4 +39,7 @@ frame_progress = 0.049997
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vmltj")
 
+[node name="attack_timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

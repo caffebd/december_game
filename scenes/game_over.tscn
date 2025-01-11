@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://n7qq4p7kttej"]
+
+[ext_resource type="FontFile" uid="uid://cwcaplp4jc5ep" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="1_bfcw2"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_hj5d5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvwsg"]
+bg_color = Color(0.18106, 0.310593, 1, 1)
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hj5d5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.705882, 0.0509804, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -168.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.059126, 0.0591259, 0.0591259, 1)
+theme_override_fonts/font = ExtResource("1_bfcw2")
+theme_override_font_sizes/font_size = 110
+text = "GameOver
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 367.0
+offset_right = 470.0
+offset_bottom = 403.0
+scale = Vector2(4.49771, 3.86681)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_bfcw2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_uvwsg")
+text = "Menu
+"
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

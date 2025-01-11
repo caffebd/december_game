@@ -5,6 +5,8 @@ var pit_dropped = false
 var run_speed = 100
 var player = null
 
+var follow_player = false
+
 func _ready() -> void:
 	pass
 	#GlobalSignals.stone_follow.connect(_stone_follow)
@@ -26,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and not pit_dropped:
 		velocity += get_gravity() * delta
 		
-	if GlobalVars.stone_follow == true:
+	if follow_player == true:
 		velocity = Vector2.ZERO
 			
 		if player:
@@ -39,5 +41,5 @@ func _on_stone_area_body_entered(body: Node2D) -> void:
 		player = body
 		GlobalSignals.stone_collected.emit()
 		queue_free()
-		if GlobalVars.stone_follow == true:
-			GlobalVars.stone_follow = false
+		if follow_player == true:
+			follow_player = false

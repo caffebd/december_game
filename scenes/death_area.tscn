@@ -38,6 +38,7 @@ sources/0 = SubResource("TileSetAtlasSource_g21id")
 sources/2 = SubResource("TileSetAtlasSource_rtxnj")
 
 [node name="death_area" type="Area2D"]
+collision_mask = 4
 script = ExtResource("1_ee6bd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

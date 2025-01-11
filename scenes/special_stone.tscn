@@ -9,7 +9,7 @@ size = Vector2(18, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eltns"]
 size = Vector2(32, 10)
 
-[node name="special_stone" type="RigidBody2D"]
+[node name="special_stone" type="RigidBody2D" groups=["others"]]
 gravity_scale = 0.0
 script = ExtResource("1_87oqn")
 
