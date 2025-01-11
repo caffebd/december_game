@@ -5,6 +5,8 @@ func _on_body_entered(body: Node2D) -> void:
 		print(body.name)
 		#GlobalSignals.stone_follow.emit()
 		call_deferred("_do_reload")
+	if body.is_in_group("stone"):
+		GlobalVars.stone_follow = true
 
 func _do_reload():
 	get_tree().reload_current_scene()

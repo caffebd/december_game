@@ -26,4 +26,3 @@ shape = SubResource("RectangleShape2D_h6m5v")
 shape = SubResource("RectangleShape2D_cmsg8")
 
 [connection signal="body_entered" from="stone_area" to="." method="_on_stone_area_body_entered"]
-[connection signal="body_exited" from="stone_area" to="." method="_on_stone_area_body_exited"]

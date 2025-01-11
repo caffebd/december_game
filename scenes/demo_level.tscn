@@ -259,6 +259,7 @@ climb_markers = NodePath("../elephant_path_markers")
 
 [node name="death_area" parent="." instance=ExtResource("12_vtbfd")]
 position = Vector2(-394, 544)
+collision_mask = 5
 
 [node name="Label" type="Label" parent="."]
 offset_left = 110.0

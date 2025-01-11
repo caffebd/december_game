@@ -20,6 +20,9 @@ func pit_drop():
 	#GlobalVars.stone_follow = true
 
 func _physics_process(delta: float) -> void:
+	
+	if pit_dropped: return
+	
 	if not is_on_floor() and not pit_dropped:
 		velocity += get_gravity() * delta
 		
@@ -28,7 +31,7 @@ func _physics_process(delta: float) -> void:
 			
 		if player:
 			velocity = position.direction_to(player.position) * run_speed
-		move_and_slide()
+	move_and_slide()
 
 
 func _on_stone_area_body_entered(body: Node2D) -> void:
@@ -36,3 +39,5 @@ func _on_stone_area_body_entered(body: Node2D) -> void:
 		player = body
 		GlobalSignals.stone_collected.emit()
 		queue_free()
+		if GlobalVars.stone_follow == true:
+			GlobalVars.stone_follow = false
