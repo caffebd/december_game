@@ -24,7 +24,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vmltj"]
-radius = 17.0294
+radius = 15.0
 
 [node name="spike" type="Area2D"]
 script = ExtResource("1_e85ko")

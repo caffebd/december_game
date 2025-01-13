@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var pit_dropped = false
 
-var run_speed = 100
+var run_speed = 200
 var player = null
 
 var follow_player = false
@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 		
 	if follow_player == true:
 		velocity = Vector2.ZERO
+		$CollisionShape2D.set_deferred("disabled", true)
 			
 		if player:
 			velocity = position.direction_to(player.position) * run_speed
@@ -40,6 +41,8 @@ func _on_stone_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player = body
 		GlobalSignals.stone_collected.emit()
+		GlobalSignals.update_stone.emit()
 		queue_free()
 		if follow_player == true:
 			follow_player = false
+			$CollisionShape2D.set_deferred("disabled", false)

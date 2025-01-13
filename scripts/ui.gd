@@ -1,28 +1,30 @@
 extends Control
 
-var coin_count = 6
+var stone_count = 6
 var my_life = 3
 
 func _ready() -> void:
-	$item_count.text = "Left : "+str(coin_count)
+	$item_count.text = "stone need : "+str(stone_count)
 	$timer_label.text = "Time : "+str(time)
 	$life_count.text = "Life : "+str(my_life)
 	GlobalSignals.update_life.connect(_update_life)
-	GlobalSignals.update_score.connect(_update_score)
+	GlobalSignals.update_stone.connect(_update_stone)
 	GlobalSignals.life_lost.connect(_life_lost)
 	GlobalSignals.sign_text.connect(_sign_text)
 
 var time = 20
 
 func _on_time_timeout() -> void:
-	time += -1
+	time -= 1
 	$timer_label.text = "Time : "+str(time)
 	if time == 0:
 		$time.stop()
 
-func _update_score():
-	coin_count -= 1
-	$item_count.text = "Left : "+str(coin_count)
+func _update_stone():
+	stone_count -= 1
+	$item_count.text = "stone need : "+str(stone_count)
+	if stone_count == 0:
+		GlobalSignals.sign_text.emit("Now throw all stone into the hole to save the elephant.")
 
 func _sign_text(text):
 	$sign_text.text = ""+str(text)

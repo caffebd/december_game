@@ -10,6 +10,7 @@ size = Vector2(32, 32)
 script = ExtResource("1_xjrsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_410d2")
 
 [node name="lava_tile_collision" type="CollisionShape2D" parent="."]
