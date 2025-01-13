@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu1km42riw2u7"]
+[gd_scene load_steps=12 format=3 uid="uid://bu1km42riw2u7"]
 
 [ext_resource type="Script" path="res://scripts/demo_player.gd" id="1_b5ktt"]
 [ext_resource type="Texture2D" uid="uid://chrqgk08vixu0" path="res://assets/demo_player/player_animation/player_animation/player_animation2.png" id="3_ap7o6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c73x3yxh4sy5s" path="res://assets/demo_player/player_animation/player_animation/player_animation4.png" id="5_vo2c4"]
 [ext_resource type="Texture2D" uid="uid://bauq0tgp4spuj" path="res://assets/demo_player/player_animation/player_animation/player_animation5.png" id="6_r2mk7"]
 [ext_resource type="Texture2D" uid="uid://dne1cvkp332d2" path="res://assets/demo_player/player_animation/player_animation/player_animation6.png" id="7_idjlu"]
+[ext_resource type="Texture2D" uid="uid://dj8582o0u76jq" path="res://assets/background/background_art 2.png" id="9_d0cts"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3u1r6"]
 animations = [{
@@ -49,6 +50,11 @@ size = Vector2(41, 64)
 [node name="player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 15
 script = ExtResource("1_b5ktt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.00002, -0.500007)
+scale = Vector2(2.425, 2.3963)
+texture = ExtResource("9_d0cts")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
