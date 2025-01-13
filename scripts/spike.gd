@@ -17,10 +17,8 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		call_deferred("_reload_scene")
-
-func _reload_scene():
-	get_tree().reload_current_scene()
+		GlobalSignals.life_lost.emit()
+		
 
 func _spike_attack():
 	if direction == 1:
