@@ -1,7 +1,10 @@
 extends Node
 
-signal update_stone()
 signal update_score()
+
+signal lost_stone()
+signal update_stone()
+
 signal update_life()
 signal life_lost()
 

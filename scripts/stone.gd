@@ -41,7 +41,7 @@ func _on_stone_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player = body
 		GlobalSignals.stone_collected.emit()
-		GlobalSignals.update_stone.emit()
+		GlobalSignals.lost_stone.emit()
 		queue_free()
 		if follow_player == true:
 			follow_player = false

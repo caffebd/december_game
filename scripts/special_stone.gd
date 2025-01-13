@@ -13,7 +13,7 @@ func pit_drop():
 func _on_special_stone_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		GlobalSignals.stone_collected.emit()
-		GlobalSignals.update_stone.emit()
+		GlobalSignals.lost_stone.emit()
 		queue_free()
 
 func _stone_show():
