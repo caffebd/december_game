@@ -1,11 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi603frbfcrcf"]
+[gd_scene load_steps=10 format=3 uid="uid://bi603frbfcrcf"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_5ytoi"]
 [ext_resource type="FontFile" uid="uid://cwcaplp4jc5ep" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="1_6pap4"]
 [ext_resource type="FontFile" uid="uid://uyx81xg8ndc3" path="res://assets/font/Comfortaa/static/Comfortaa-Bold.ttf" id="2_o7x6v"]
 [ext_resource type="Texture2D" uid="uid://b5w51aw7o2yyk" path="res://assets/other_sprite/my_home.png" id="3_nmcww"]
+[ext_resource type="Texture2D" uid="uid://d21km2pjgcucl" path="res://assets/demo_tiles/stone.png" id="3_p11mv"]
+[ext_resource type="Texture2D" uid="uid://bynl3cofdtt03" path="res://assets/background/1.png" id="6_ygfrm"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_gwmtp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kssdr"]
+bg_color = Color(0.503362, 7.78274e-05, 0.451434, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhdfy"]
+bg_color = Color(6.85863e-07, 0.409947, 0.202387, 1)
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -33,7 +41,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 794.0
 offset_top = 11.0
-offset_right = 1044.0
+offset_right = 1046.0
 offset_bottom = 57.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_o7x6v")
@@ -41,6 +49,11 @@ theme_override_font_sizes/font_size = 40
 text = "stone need :"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="item_count"]
+position = Vector2(-21, 24)
+scale = Vector2(1.1875, 1.1875)
+texture = ExtResource("3_p11mv")
 
 [node name="life_count" type="Label" parent="."]
 layout_mode = 0
@@ -98,5 +111,47 @@ offset_right = 1080.0
 offset_bottom = 595.0
 texture_normal = ExtResource("3_nmcww")
 
+[node name="win_ui" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="win_ui"]
+position = Vector2(565.333, 318)
+scale = Vector2(2.97778, 2.97778)
+texture = ExtResource("6_ygfrm")
+
+[node name="Label" type="Label" parent="win_ui"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 237.0
+offset_top = 59.0
+offset_right = 913.0
+offset_bottom = 182.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o7x6v")
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_kssdr")
+text = "!! You Won !!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="win_ui"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 328.0
+offset_right = 870.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o7x6v")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_uhdfy")
+text = "Main Menu"
+
 [connection signal="timeout" from="time" to="." method="_on_time_timeout"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="win_ui/Button" to="." method="_on_button_pressed"]

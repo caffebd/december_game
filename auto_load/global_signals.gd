@@ -20,3 +20,5 @@ signal stone_collected()
 signal elephant_climb()
 
 signal stone_follow(object)
+
+signal elephant_saved()

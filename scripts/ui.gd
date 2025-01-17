@@ -15,6 +15,7 @@ func _ready() -> void:
 	GlobalSignals.life_lost.connect(_life_lost)
 	GlobalSignals.sign_text.connect(_sign_text)
 	GlobalSignals.update_score.connect(_update_score)
+	GlobalSignals.elephant_saved.connect(_elephant_saved)
 
 var time = 20
 
@@ -23,6 +24,11 @@ func _on_time_timeout() -> void:
 	$timer_label.text = "Time : "+str(time)
 	if time == 0:
 		$time.stop()
+
+func _elephant_saved():
+	%win_ui.visible = true
+	
+	
 
 #func _update_stone():
 	#stone_count += 1
@@ -58,4 +64,8 @@ func change_scene():
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func _on_texture_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+
+
+func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")

@@ -22,11 +22,10 @@ scale = Vector2(3.53125, 3.53125)
 texture = ExtResource("2_33xdb")
 
 [node name="lock_label" type="Label" parent="."]
-visible = false
-offset_left = -43.0
-offset_top = -59.0
-offset_right = 43.0
-offset_bottom = -36.0
+offset_left = -77.0
+offset_top = -102.0
+offset_right = 9.0
+offset_bottom = -79.0
 theme_override_fonts/font = ExtResource("3_r8e4a")
 theme_override_font_sizes/font_size = 13
 text = "Door Locked"

@@ -8,7 +8,7 @@ var player = null
 var follow_player = false
 
 func _ready() -> void:
-	pass
+	z_index = -1
 	#GlobalSignals.stone_follow.connect(_stone_follow)
 
 func pit_drop():
