@@ -11,7 +11,7 @@ func _ready() -> void:
 	$score_count.text = "Score : "+str(score_count)
 	GlobalSignals.update_life.connect(_update_life)
 	GlobalSignals.lost_stone.connect(_lost_stone)
-	#GlobalSignals.update_stone.connect(_update_stone)
+	GlobalSignals.update_stone.connect(_update_stone)
 	GlobalSignals.life_lost.connect(_life_lost)
 	GlobalSignals.sign_text.connect(_sign_text)
 	GlobalSignals.update_score.connect(_update_score)
@@ -30,9 +30,9 @@ func _elephant_saved():
 	
 	
 
-#func _update_stone():
-	#stone_count += 1
-	#$item_count.text = "stone need : "+str(stone_count)
+func _update_stone():
+	stone_count += 1
+	$item_count.text = "stone need : "+str(stone_count)
 
 func _update_score():
 	score_count += 5

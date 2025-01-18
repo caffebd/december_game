@@ -176,7 +176,7 @@ position = Vector2(241, -78)
 position = Vector2(203, -79)
 
 [node name="key" parent="." instance=ExtResource("9_fwqki")]
-position = Vector2(100, -1259)
+position = Vector2(65, -1267)
 
 [node name="all_flower_jump" type="Node2D" parent="."]
 
@@ -247,7 +247,7 @@ move_to = Vector2(40, 0)
 
 [node name="ghost3" parent="enemies" instance=ExtResource("6_n6pjw")]
 texture_filter = 1
-position = Vector2(2, -760)
+position = Vector2(81, -762)
 move_to = Vector2(130, 0)
 
 [node name="ghost4" parent="enemies" instance=ExtResource("6_n6pjw")]
@@ -313,9 +313,14 @@ position = Vector2(1172, -848)
 move_to = Vector2(120, 0)
 
 [node name="house" parent="." instance=ExtResource("10_6noqt")]
-position = Vector2(-150, -768)
+position = Vector2(-73, -769)
+
+[node name="special_stone" parent="house" index="3"]
+position = Vector2(-144, 16)
 
 [node name="DemoPlayer" parent="." instance=ExtResource("2_gnkf1")]
-position = Vector2(-77, -225)
+position = Vector2(-39, -232)
 
 [connection signal="body_entered" from="stone_markers/marker_area" to="stone_markers/marker_area" method="_on_body_entered"]
+
+[editable path="house"]

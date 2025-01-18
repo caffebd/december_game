@@ -16,6 +16,7 @@ func pit_drop():
 	#linear_velocity = Vector2.ZERO
 	pit_dropped = true
 	$stone_area/CollisionShape2D.set_deferred("disabled", true)
+	GlobalSignals.lost_stone.emit()
 
 #func _stone_follow(object):
 	#player = object

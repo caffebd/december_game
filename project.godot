@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GlobalSignals="*res://auto_load/global_signals.gd"
 GlobalVars="*res://auto_load/global_vars.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 power_up=""

@@ -11,6 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 		$lock_label.visible = true
 		if door_unlocked and not stone_collected:
 			stone_collected = true
+			$special_stone.stone_show()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
